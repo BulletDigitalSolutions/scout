@@ -31,10 +31,10 @@ class ImportCommand extends Command
      * @param \Illuminate\Contracts\Events\Dispatcher $events
      * @param ManagerRegistry                         $registry
      */
-    public function handle(Dispatcher $events, ManagerRegistry $registry)
+    public function handle(Dispatcher $events)
     {
         $class = $this->argument('model');
-        $em    = $registry->getManagerForClass($class);
+        $em    = app(ManagerRegistry::class)->getManagerForClass($class);
 
         $repository = $em->getRepository($class);
 
