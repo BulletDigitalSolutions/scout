@@ -37,7 +37,7 @@ class SearchableExtension implements Extension
     /**
      * @return array
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [];
     }
