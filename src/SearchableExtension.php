@@ -29,7 +29,7 @@ class SearchableExtension implements Extension
      * @param EntityManagerInterface $em
      * @param Reader|null            $reader
      */
-    public function addSubscribers(EventManager $manager, EntityManagerInterface $em, Reader $reader = null): void
+    public function addSubscribers(\Doctrine\Common\EventManager $manager, \Doctrine\ORM\EntityManagerInterface $em): void
     {
         $manager->addEventSubscriber(new SearchableSubscriber($this->engine));
     }
