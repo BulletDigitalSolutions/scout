@@ -85,9 +85,9 @@ class SearchableSubscriber implements EventSubscriber
     }
 
     /**
-     * @param \LaravelDoctrine\Scout\Subscribers\PreRemoveEventArgs $event
+     * @param \Doctrine\ORM\Event\PreRemoveEventArgs $event
      */
-    public function preRemove(\LaravelDoctrine\Scout\Subscribers\PreRemoveEventArgs $event)
+    public function preRemove(\Doctrine\ORM\Event\PreRemoveEventArgs $event)
     {
         $object = $event->getObject();
 
