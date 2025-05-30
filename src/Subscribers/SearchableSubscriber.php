@@ -85,9 +85,9 @@ class SearchableSubscriber implements EventSubscriber
     }
 
     /**
-     * @param LifecycleEventArgs $event
+     * @param \LaravelDoctrine\Scout\Subscribers\PreRemoveEventArgs $event
      */
-    public function preRemove(LifecycleEventArgs $event)
+    public function preRemove(\LaravelDoctrine\Scout\Subscribers\PreRemoveEventArgs $event)
     {
         $object = $event->getObject();
 
@@ -97,9 +97,9 @@ class SearchableSubscriber implements EventSubscriber
     }
 
     /**
-     * @param \LaravelDoctrine\Scout\Subscribers\PreRemoveEventArgs $event
+     * @param LifecycleEventArgs $event
      */
-    public function scheduleIndexing(\LaravelDoctrine\Scout\Subscribers\PreRemoveEventArgs $event)
+    public function scheduleIndexing(LifecycleEventArgs $event)
     {
         $object = $event->getObject();
 
