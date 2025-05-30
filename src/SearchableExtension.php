@@ -29,7 +29,7 @@ class SearchableExtension implements Extension
      * @param EntityManagerInterface $em
      * @param Reader|null            $reader
      */
-    public function addSubscribers(\Doctrine\Common\EventManager $manager, \Doctrine\ORM\EntityManagerInterface $em): void
+    public function addSubscribers(EventManager $manager, EntityManagerInterface $em, Reader $reader = null)
     {
         $manager->addEventSubscriber(new SearchableSubscriber($this->engine));
     }
@@ -37,7 +37,7 @@ class SearchableExtension implements Extension
     /**
      * @return array
      */
-    public function getFilters(): array
+    public function getFilters()
     {
         return [];
     }
