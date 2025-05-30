@@ -87,7 +87,7 @@ class SearchableSubscriber implements EventSubscriber
     /**
      * @param LifecycleEventArgs $event
      */
-    public function preRemove(LifecycleEventArgs $event)
+    public function preRemove(PreRemoveEventArgs $event)
     {
         $object = $event->getObject();
 
