@@ -56,13 +56,13 @@ class SearchableSubscriber implements EventSubscriber
     public function postFlush(PostFlushEventArgs $args)
     {
         foreach ($this->indexable as $event) {
-            $this->indexEntity($args->getEntityManager(), $event);
+            $this->indexEntity($args->getObjectManager(), $event);
         }
 
         $this->indexable = [];
 
         foreach ($this->deleteable as $event) {
-            $this->removeEntity($args->getEntityManager(), $event);
+            $this->removeEntity($args->getObjectManager(), $event);
         }
 
         $this->deleteable = [];
