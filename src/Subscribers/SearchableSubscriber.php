@@ -97,9 +97,9 @@ class SearchableSubscriber implements EventSubscriber
     }
 
     /**
-     * @param LifecycleEventArgs $event
+     * @param \Doctrine\ORM\Event\PostPersistEventArgs $event
      */
-    public function scheduleIndexing(LifecycleEventArgs $event)
+    public function scheduleIndexing(\Doctrine\ORM\Event\PostPersistEventArgs $event)
     {
         $object = $event->getObject();
 
